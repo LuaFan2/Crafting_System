@@ -6,13 +6,47 @@ ENT.Author = "Lambda Gaming"
 ENT.Spawnable = true
 ENT.Category = "Crafting Table"
 
-CraftingTable = {}
+CraftingTable = {} --Initializes the item table, don't touch
+CraftingCategory = {} --Initializes the category table, don't touch
 
---Template Item
+--Template Category
+--[[
+	CraftingCategory[1] = { --Be sure to change the number, the lower the number, the higher up in the list it is
+		Name = "Pistols" --Name of the category
+	}
+]]
+
+CraftingCategory[1] = {
+	Name = "Pistols",
+	Color = Color( 49, 53, 61, 255 )
+}
+
+CraftingCategory[2] = {
+	Name = "SMGs",
+	Color = Color( 49, 53, 61, 255 )
+}
+
+CraftingCategory[3] = {
+	Name = "Rifles",
+	Color = Color( 49, 53, 61, 255 )
+}
+
+CraftingCategory[4] = {
+	Name = "Shotguns",
+	Color = Color( 49, 53, 61, 255 )
+}
+
+CraftingCategory[5] = {
+	Name = "Tools",
+	Color = Color( 49, 53, 61, 255 )
+}
+
+--Template Crafting Item
 --[[
 	CraftingTable["weapon_crowbar"] = { --Add the entity name of the item in the brackets with quotes
 	Name = "Crowbar", --Name of the item, different from the item's entity name
 	Description = "Requires 1 ball.", --Description of the item
+	Category = "Tools", --Category the item shows up in, has to match the name of a category created above
 	Materials = { --Entities that are required to craft this item, make sure you leave the entity names WITHOUT quotes!
 		iron = 2,
 		wood = 1
@@ -31,6 +65,7 @@ CraftingTable = {}
 CraftingTable["weapon_glock2"] = {
 	Name = "Glock",
 	Description = "Requires 1 iron.",
+	Category = "Pistols",
 	Materials = {
 		iron = 1
 	},
@@ -45,6 +80,7 @@ CraftingTable["weapon_glock2"] = {
 CraftingTable["weapon_m42"] = {
 	Name = "M4",
 	Description = "Requires 3 iron.",
+	Category = "Rifles",
 	Materials = {
 		iron = 3
 	},
@@ -59,6 +95,7 @@ CraftingTable["weapon_m42"] = {
 CraftingTable["weapon_mac102"] = {
 	Name = "MAC 10",
 	Description = "Requires 2 iron.",
+	Category = "SMGs",
 	Materials = {
 		iron = 2
 	},
@@ -73,6 +110,7 @@ CraftingTable["weapon_mac102"] = {
 CraftingTable["weapon_mp52"] = {
 	Name = "MP5",
 	Description = "Requires 2 iron.",
+	Category = "SMGs",
 	Materials = {
 		iron = 2
 	},
@@ -87,6 +125,7 @@ CraftingTable["weapon_mp52"] = {
 CraftingTable["weapon_p2282"] = {
 	Name = "P228",
 	Description = "Requires 1 iron.",
+	Category = "Pistols",
 	Materials = {
 		iron = 1
 	},
@@ -101,6 +140,7 @@ CraftingTable["weapon_p2282"] = {
 CraftingTable["weapon_pumpshotgun2"] = {
 	Name = "Pump Shotgun",
 	Description = "Requires 4 iron.",
+	Category = "Shotguns",
 	Materials = {
 		iron = 4
 	},
@@ -115,6 +155,7 @@ CraftingTable["weapon_pumpshotgun2"] = {
 CraftingTable["lockpick"] = {
 	Name = "Lockpick",
 	Description = "Requires 1 iron.",
+	Category = "Tools",
 	Materials = {
 		iron = 1
 	},
@@ -129,6 +170,7 @@ CraftingTable["lockpick"] = {
 CraftingTable["ls_sniper"] = {
 	Name = "Silenced Sniper Rifle",
 	Description = "Requires 5 iron.",
+	Category = "Rifles",
 	Materials = {
 		iron = 5
 	},
@@ -143,6 +185,7 @@ CraftingTable["ls_sniper"] = {
 CraftingTable["weapon_ak472"] = {
 	Name = "AK-47",
 	Description = "Requires 4 iron.",
+	Category = "Rifles",
 	Materials = {
 		iron = 4
 	},
@@ -157,6 +200,7 @@ CraftingTable["weapon_ak472"] = {
 CraftingTable["weapon_deagle2"] = {
 	Name = "Deagle",
 	Description = "Requires 2 iron.",
+	Category = "Pistols",
 	Materials = {
 		iron = 2
 	},
@@ -171,6 +215,7 @@ CraftingTable["weapon_deagle2"] = {
 CraftingTable["weapon_fiveseven2"] = {
 	Name = "FiveSeven",
 	Description = "Requires 1 iron.",
+	Category = "Pistols",
 	Materials = {
 		iron = 1
 	},
