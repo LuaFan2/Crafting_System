@@ -82,9 +82,3 @@ CRAFT_CONFIG_MINE_WHITELIST = {
 
 --How long it takes in seconds for a rock or tree to respawn after it's been mined
 CRAFT_CONFIG_MINE_RESPAWN_TIME = 300
-
---List of entities that are allowed to be placed on the table. Don't forget to configure the items in the shared.lua as well! Failure to do so will result in errors!
-CRAFT_CONFIG_ALLOWED_ENTS = {
-    ["iron"] = true,
-	["wood"] = true
-}

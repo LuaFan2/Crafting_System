@@ -8,6 +8,22 @@ ENT.Category = "Crafting Table"
 
 CraftingTable = {} --Initializes the item table, don't touch
 CraftingCategory = {} --Initializes the category table, don't touch
+CraftingIngredient = {} --Initializes the ingredients, don't touch
+
+--Template Ingredient
+--[[
+	CraftingIngredient["iron"] = { --Class name of the entity goes in the brackets
+		Name = "Iron" --Name that shows up in the ingredient list
+	}
+]]
+
+CraftingIngredient["iron"] = {
+	Name = "Iron"
+}
+
+CraftingIngredient["wood"] = {
+	Name = "Wood"
+}
 
 --Template Category
 --[[
