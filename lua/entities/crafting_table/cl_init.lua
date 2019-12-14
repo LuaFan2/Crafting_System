@@ -31,6 +31,7 @@ DrawItems = function( ent ) --Panel that draws the list of materials that are on
 		surface.PlaySound( CRAFT_CONFIG_UI_SOUND )
 	end
 
+	local MenuReloadCooldown = 0
 	local mainframescroll = vgui.Create( "DScrollPanel", mainframe )
 	mainframescroll:Dock( FILL )
 	for k,v in pairs( CraftingIngredients ) do
@@ -54,6 +55,7 @@ DrawItems = function( ent ) --Panel that draws the list of materials that are on
 				surface.PlaySound( CRAFT_CONFIG_FAIL_SOUND )
 				return --Prevents players from having negative ingredients
 			end
+			if MenuReloadCooldown > CurTime() then return end
 			net.Start( "DropItem" )
 			net.WriteEntity( ent )
 			net.WriteString( k )
@@ -62,6 +64,7 @@ DrawItems = function( ent ) --Panel that draws the list of materials that are on
 				mainframe:Close()
 				DrawItems( ent ) --Refreshes the panel so it updates the number of materials
 			end )
+			MenuReloadCooldown = CurTime() + 1
 		end
 		table.insert( itemtable, k )
 	end
